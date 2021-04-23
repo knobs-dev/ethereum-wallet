@@ -1,0 +1,205 @@
+{
+    "errors": {
+        "error_404": "Error 404"
+    },
+    "wallet_transaction": {
+        "eth_request": "Get ETH"
+    },
+    "guide_screen": {
+        "title": {
+            "blockchain": "Blockchain",
+            "wallet": "The Wallet",
+            "the_mnemonic_phrase": "Mnemonic phrase",
+            "address": "The address"
+        },
+        "description": {
+            "blockchain": "The blockchain is becoming more and more present in everyday life because it can create new business dynamics that guaranteed decentralization and transparency.",
+            "wallet": "The wallet represents your identity on the blockchain. It takes advantage of asymmetric cryptography, therefore it is composed of a public key and a private key to each other.",
+            "the_mnemonic_phrase": "The mnemonic phrase is a sequence of words, generally, 12, that allows you to recover your wallet. It must be carefully preserved and kept secret.",
+            "address": "Represents your identifier on the blockchain. Anyone who wants to transfer funds to you or want to interact with you will need to refer to this code. It could be considered your 'IBAN' or your identity card number."
+        },
+        "start_button": "Let's go",
+        "next_button": "Next",
+        "previous_button": "Go back"
+    },
+    "privacy_settings": {
+        "privacy_keys": "Privacy and Key",
+        "title_key": "Private Key",
+        "title_mnemonica": "Mnemonic phrase",
+        "delete_wallet": "Delete wallet data",
+        "export_wallet": "Export"
+    },
+    "notarize": {
+        "notarize": "Notarize hash",
+        "placeholder": "Hash to notarize",
+        "notarize_check": "Check data",
+        "hash": "Hash",
+        "send_notarize": "Notarize",
+        "invalid_hash_title": "Invalid Hash",
+        "invalid_hash_description": "Hash"
+    },
+    "send_transaction": {
+        "handle_send": {
+            "valid_address": {
+                "title_address": "Beware!",
+                "description": "The destination address is required"
+            },
+            "valid_amount": {
+                "title_address": "Beware!",
+                "description_funds": "Insufficient funds",
+                "description_no_funds": "Enter an amount"
+            }
+        },
+        "form": {
+            "send_to": "Send to",
+            "amount": "Amount:",
+            "amount_check": "Amount",
+            "gas_price": "Gas price:",
+            "gas_required": "Gas required:",
+            "total_amount": "Total amount",
+            "fees_cost": "Fees calculation",
+            "speed_selection": "Speed transaction:",
+            "speed_selection_check": "Speed transaction",
+            "fees": "Fees",
+            "slow": "Slow",
+            "medium": "Medium",
+            "fast": "Fast"
+        },
+        "delete_button_text": "Go back",
+        "send_button_text": "Send",
+        "check_data": "Check data"
+    },
+    "transaction": {
+        "heading": "Transaction list",
+        "transaction_list_pending": "Transaction list pending",
+        "transaction_list_complete": "Transaction list complited"
+    },
+    "transactionDetail": {
+        "heading": "Transaction",
+        "transaction_confirmed": "The transaction has been sent. It will soon be included in a block.",
+        "view_on_etherscan": "See on Etherscan",
+        "sender": "Sender",
+        "dispatch": "Address",
+        "amount": "Amount",
+        "fees": "Fees",
+        "state": "Status",
+        "go_back": "Back to wallet",
+        "failed": "Failed",
+        "data": "Hash"
+    },
+    "wallet_address": {
+        "title": "Address copied!",
+        "description": "The address was copied!"
+    },
+    "wallet": {
+        "steps": {
+            "balance": "This is your balance. Represents the amount of Ether available in Your Wallet",
+            "address": "Your wallet address represents your identifier on the blockchain. It's kind of like an IBAN, but with superpowers",
+            "registered_addresses": "Here you can find the list of Wallet Addresses generated through",
+            "send": "Click here to send Ether to another Wallet",
+            "twitter": "Click here to communicate to the world that you finally have a Wallet on Ethereum",
+            "etherscan": "Click here to see the status of your Wallet on Etherscan, one of the leading blockchain explorers on Ethereum",
+            "menu_button_network": "Click here to choose between the test network (Ropsten) and the main network (Mainnet)"
+        },
+        "send_button": "Send",
+        "notarize": "Notarize",
+        "heading": "Addresses generated through ",
+        "tour_button": "Understood!"
+    },
+    "wallet_creation": {
+        "qr_wallet_not_exist": "You must first create a wallet",
+        "loading_text": ". . . generation of your private key in progress!",
+        "wallet_address": "Create your Wallet on Ethereum",
+        "description_address": "Hold on tight, buckle up and hit let's go",
+        "button_address": "Let's go",
+        "wallet_key": "Private Key",
+        "description_key": "Everything start from the creation of a private key",
+        "button_key": "Generate!",
+        "basic_slide_address": {
+            "title": "This is Your Address",
+            "description": "It represents the identifier of your Wallet on Ethereum, a bit like the IBAN of a bank account",
+            "button_text": "Go to Your wallet!"
+        },
+        "basic_slide_key": {
+            "title": "Here is your private key!",
+            "heading": "Keep it and do not show it to anyone!",
+            "description": "To identify your Wallet on Ethereum (for example to receive transactions) instead use the address calculated from your private key",
+            "button_text": "Generate Address"
+        },
+        "button_import": "Import wallet"
+    },
+    "dark_mode": {
+        "appearance": "Appearance:",
+        "light": "light",
+        "dark": "dark"
+    },
+    "menu_button": {
+        "title": "Select the network"
+    },
+    "credits": {
+        "heading": "Credits",
+        "sub_heading": "Animations",
+        "author": "Maker: ",
+        "name_one": "Artyom Konakov",
+        "name_two": "Gastón Solis",
+        "source_desktop": "source: ",
+        "source_mobile": "source",
+        "source_link_one": "https://lottiefiles.com/33920-working-server-animation#",
+        "source_link_two": "https://lottiefiles.com/36021-staking-on-ethereum"
+    },
+    "language_selector": {
+        "heading": "Language",
+        "title": "Select the language",
+        "italian": "Italian",
+        "english": "English"
+    },
+    "drawer": {
+        "transaction": "Transactions"
+    },
+    "modals": {
+        "clear_data": {
+            "heading": "Warning! Wallet data deletion",
+            "dialog_body_one": "Are you sure you want to delete your Wallet data? If you have not made a backup, you will no longer be able to access your wallet.",
+            "dialog_body_two": "If you are sure, enter the following code and press the 'Clear data' button",
+            "go_back_btn": "Go back",
+            "delete_btn": "Clear data"
+        },
+        "export": {
+            "heading": "Wallet export",
+            "password_label": "Enter a password to encrypt the wallet before downloading it",
+            "password_alert": "Your wallet will be encrypted using your password",
+            "strength": "Strength",
+            "weak": "weak",
+            "medium": "medium",
+            "strong": "strong",
+            "go_back_btn": "Go back",
+            "export_btn": "Export",
+            "loading_text": "Encryption in progress"
+        }
+    },
+    "transaction_list": {
+        "inbound": "Inbound",
+        "outbound": "Outbound",
+        "no_inbound": "There are no inbound transactions",
+        "no_outbound": "There are no outbound transactions",
+        "amount": "Amount",
+        "no_transaction": "There are no transactions",
+        "from": "From",
+        "to": "To",
+        "txn_hash": "Txn Hash"
+    },
+    "drawer_copy_address": "Copy to clipboard",
+    "drawer_copied_address": "Copied!",
+    "footer_version": "Version:",
+    "basicSlide": {
+        "otherwise": "otherwise"
+    },
+    "import": {
+        "title": "Import your wallet",
+        "description": "Enter your private key to import your wallet:",
+        "close": "Go back",
+        "import": "Import",
+        "title_error": "Invalid Key",
+        "description_error": "The Private key entered is wrong!"
+    }
+}
