@@ -37,12 +37,13 @@ import {
     infuraProviderByNetwork,
     usePlatformDetector,
 } from '../../imports/utils';
-import EtherInput from '../../components/etherInput/etherInput';
+import EtherInput, { parseEther } from '../../components/etherInput/etherInput';
 import { AvailableNetworks } from '../../redux/common/types';
 import Footer from '../../components/footer/footer';
 import ConfirmData from '../../components/modals/confirmData';
 
 import { useTranslation } from 'react-i18next';
+import { formatEther } from '@ethersproject/units';
 
 type SendTransactionProps = {
     wallet?: any;
@@ -61,9 +62,6 @@ const GasPriceMap: { [key: string]: number } = {
     fast: 120,
 };
 
-const format = (val: BigNumber): string => {
-    return ethers.utils.formatEther(val).toString();
-};
 interface SendTransactionParams {
     address: string;
 }
@@ -97,13 +95,13 @@ const SendTransaction = (props: SendTransactionProps) => {
         'slow',
     );
     const [gasPrice, setGasPrice] = useState<number>(GasPriceMap.slow);
-    const [amount, setAmount] = useState<BigNumber>(BigNumber.from(0));
+    const [amount, setAmount] = useState<string>('0.0');
     const [max, setMax] = useState<BigNumber>();
 
     const isValidAddress = ethers.utils.isAddress(destinationAddress);
-    const isValidAmount = max?.gte(amount) && amount.gt(0);
+    const isValidAmount =  !isNaN(parseFloat(amount)) && max?.gte(parseEther(amount)) && parseEther(amount).gt(0);
 
-    const isZeroAmount = amount?.eq(0);
+    const isZeroAmount = parseEther(amount)?.eq(0);
 
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -152,14 +150,14 @@ const SendTransaction = (props: SendTransactionProps) => {
     const handleMax = useCallback(async () => {
         const max = await calcMax(wallet.address, gasPrice, props.network);
         max <= BigNumber.from(0)
-            ? setAmount(BigNumber.from(0))
-            : setAmount(max);
+            ? setAmount('0')
+            : setAmount(formatEther(max));
     }, [gasPrice, props.network, wallet.address]);
 
     const handleSend = useCallback(() => {
         props.txActions.txSend(
             destinationAddress,
-            amount,
+            parseEther(amount),
             ethers.utils.parseUnits(gasPrice.toString(), 'gwei'),
         );
     }, [props.txActions, destinationAddress, amount, gasPrice]);
@@ -364,7 +362,7 @@ const SendTransaction = (props: SendTransactionProps) => {
                         )}
                         <ConfirmData
                             address={destinationAddress}
-                            amount={format(amount)}
+                            amount={amount}
                             speed={transactionSpeed}
                             fees={gweiToEth(gasPrice * 21000)}
                             isValidAddress={isValidAddress}
