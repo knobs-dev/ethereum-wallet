@@ -6,15 +6,15 @@ import {
 } from '@chakra-ui/react';
 
 export type EtherInputProps = {
-    value: BigNumber;
-    onChange: (amount: BigNumber) => void;
+    value: string;
+    onChange: (amount: string) => void;
     max: BigNumber | undefined;
     platform: string;
 };
 
-const format = (val: BigNumber): string =>
+export const formatEther = (val: BigNumber): string =>
     ethers.utils.formatEther(val).toString();
-const parse = (val: string): BigNumber =>
+export const parseEther = (val: string): BigNumber =>
     ethers.utils.parseEther(val ? val : '0');
 
 const EtherInput: FunctionComponent<EtherInputProps> = ({
@@ -26,21 +26,21 @@ const EtherInput: FunctionComponent<EtherInputProps> = ({
     const [ isValid, setIsValid ] = useState(false);
 
     const handleIsValid = () => {
-        setIsValid(max ? value.gt(max) : true)
+        setIsValid(max ? parseEther(value).gt(max) : true)
     }
 
     return (
         <NumberInput
             w={platform === 'isMobile' ? '80%' : '95%'}
             focusBorderColor='brand.900'
-            onChange={valueString => {
+            onChange={value => {
                 handleIsValid();
-                const value = parse(valueString);
                 onChange(value);
             }}
-            value={format(value)}
+            value={value}
             step={1}
             min={0}
+            precision={2}
             isInvalid={isValid}
         >
             <NumberInputField />
