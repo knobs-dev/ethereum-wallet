@@ -16,7 +16,7 @@ import {
 import { ethers } from 'ethers';
 import { EtherscanIcon } from '../icons/icons';
 import { useTranslation } from 'react-i18next';
-import { AvailableNetworks } from '../../redux/common/types';
+import { AvailableNetworks } from '../../imports/config';
 export type TransactionListProps = {
     wallet?: any;
     transactions: Array<any>;
@@ -66,7 +66,7 @@ const TransactionList: FunctionComponent<TransactionListProps> = ({
         return platform === 'isDesktop' || platform === 'isTablet' ? (
             <Td>
                 <a
-                    href={viewOnEtherscan('ropsten', 'address', wallet.address)}
+                    href={viewOnEtherscan('polygon-mumbai', 'address', wallet.address)}
                     target='_blank'
                     rel='noreferrer'
                 >

@@ -19,7 +19,7 @@ import {
     viewOnEtherscan,
 } from '../../imports/utils';
 import { EtherscanIcon, ETHIcon } from '../icons/icons';
-import { AvailableNetworks } from '../../redux/common/types';
+import { AvailableNetworks } from '../../imports/config';
 import { TwitterShareButton, TwitterIcon } from 'react-share';
 
 import { useTranslation } from 'react-i18next';
@@ -167,7 +167,7 @@ const WalletAddress: FunctionComponent<WalletAddressProps> = ({
             {mobileAddress}
             {platform === 'isDesktop' && (
                 <>
-                    {network === 'ropsten' ? (
+                    {network === 'polygon-mumbai' ? (
                         <ETHIcon
                             id='eth'
                             onClick={handleFaucet}

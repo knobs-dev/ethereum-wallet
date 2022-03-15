@@ -1,4 +1,5 @@
 import { createAction, ActionType } from 'typesafe-actions';
+import { AvailableNetworks } from '../../imports/config';
 
 import {
     CLEAR_DATA_REQ,
@@ -8,7 +9,6 @@ import {
     NETWORK_SELECT,
 } from './actionTypes';
 
-import { AvailableNetworks } from './types';
 
 // Generate Wallet Request
 export const clearData = createAction(CLEAR_DATA_REQ)();

@@ -1,26 +1,13 @@
 import { ethers } from 'ethers';
 import { createStandaloneToast, useMediaQuery } from '@chakra-ui/react';
-import { AvailableNetworks } from '../redux/common/types';
-import { etherscanLinks, infuraApiKey } from './config';
+import { explorerLinks, AvailableProviders, AvailableNetworks } from './config';
 
-export function getProvider(providerType: string, data: any = {}) {
-    switch (providerType) {
-        case 'infura':
-            return new ethers.providers.InfuraProvider(
-                data.network,
-                data.infuraApiKey,
-            );
-        default:
-            return ethers.getDefaultProvider(data.network);
-    }
+export function getProviderByNetwork(network: AvailableNetworks){
+    return new ethers.providers.JsonRpcProvider(AvailableProviders[network])
 }
 
-export function infuraProviderByNetwork(network: AvailableNetworks) {
-    return new ethers.providers.InfuraProvider(network, infuraApiKey);
-}
-
-export function etherscanLinkByNetwork(network: AvailableNetworks) {
-    return `https://${etherscanLinks[network]}`;
+export function explorerLinkByNetwork(network: AvailableNetworks) {
+    return `https://${explorerLinks[network]}`;
 }
 
 // Returns the formatted etherscan link based on the link type and network
@@ -30,7 +17,7 @@ export function viewOnEtherscan(
     linkType: EtherscanLinkTypes,
     hashOrAddress: string,
 ) {
-    return `${etherscanLinkByNetwork(network)}/${linkType}/${hashOrAddress}`;
+    return `${explorerLinkByNetwork(network)}/${linkType}/${hashOrAddress}`;
 }
 
 export function truncStringPortion(
@@ -67,8 +54,10 @@ export function truncateStringByWidth(
 
 export const downloadJSON = (data: any, filename: string) => {
     var json = data;
+    // @ts-ignore
     if (window.navigator && window.navigator.msSaveOrOpenBlob) {
         let blob = new Blob([json], { type: 'application/json' });
+        // @ts-ignore
         window.navigator.msSaveOrOpenBlob(blob, filename);
     } else {
         let file = new File([json], filename, { type: 'application/json' });

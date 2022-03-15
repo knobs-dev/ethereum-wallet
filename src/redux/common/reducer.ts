@@ -5,7 +5,7 @@ import { CommonReducerState } from './types';
 
 const initialState: CommonReducerState = {
     guide: {},
-    selectedNetwork: 'ropsten',
+    selectedNetwork: 'polygon-mumbai',
 };
 
 export function common(state = initialState, action: any): CommonReducerState {

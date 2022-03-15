@@ -1,6 +1,5 @@
-export type AvailableNetworks = 'ropsten' | 'mainnet';
+import { AvailableNetworks } from "../../imports/config";
 
-// Reducer
 export type CommonReducerState = {
     guide: { [key: string]: boolean };
     selectedNetwork: AvailableNetworks;

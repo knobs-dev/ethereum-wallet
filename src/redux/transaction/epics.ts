@@ -18,17 +18,18 @@ import {
 } from "./actionCreators";
 import { TransactionReducerState } from "./types";
 
-// TODO: replace provider with infuraProviderByNetwork
-
-import { provider } from "../../imports/config";
 import { isActionOf } from "typesafe-actions";
 
 import { customHistory } from "../../router";
+import { getProviderByNetwork } from "../../imports/utils";
+import { RootState } from "../store";
+import { ExplorerApiEndpoints, ExplorerApiKeys } from "../../imports/config";
 
 const syncTransactions = async (
   lastSyncedBlock: number,
   handler: (event: string, transactions: Array<any>) => void
 ) => {
+  const provider = getProviderByNetwork("polygon-mumbai");
   const currBlock: number = await provider.getBlockNumber();
 
   let syncedBlock = lastSyncedBlock;
@@ -74,16 +75,18 @@ const txSyncEpic: Epic<
     })
   );
 
-const txSendEpic: Epic<TransactionActions, TransactionActions, any> = (
+const txSendEpic: Epic<TransactionActions, TransactionActions, RootState> = (
   action$,
   state$
 ) =>
   action$.pipe(
     filter(isActionOf(txSend)),
     mergeMap(({ payload }) => {
-      const wallet = state$.value.wallet?.wallet;
-      const connector = state$.value.walletconnect?.connector;
+      const wallet = state$.value.wallet.wallet;
+      const connector = state$.value.walletconnect.connector;
       const isWalletConnect = !wallet.privateKey && !wallet.mnemonic;
+      const network = state$.value.common.selectedNetwork;
+      const provider = getProviderByNetwork(network);
 
       const account = !isWalletConnect && wallet.connect(provider);
 
@@ -137,15 +140,18 @@ const txSendEpic: Epic<TransactionActions, TransactionActions, any> = (
     })
   );
 
-const txSendWaitTxEpic: Epic<TransactionActions, TransactionActions, any> = (
-  action$,
-  state$
-) =>
+const txSendWaitTxEpic: Epic<
+  TransactionActions,
+  TransactionActions,
+  RootState
+> = (action$, state$) =>
   action$.pipe(
     filter(isActionOf(txSendOk)),
     mergeMap(({ payload }) => {
       // Change page
       customHistory.replace(`/tx/${payload.tx.hash}`);
+      const network = state$.value.common.selectedNetwork;
+      const provider = getProviderByNetwork(network);
       return from(provider.waitForTransaction(payload.tx.hash)).pipe(
         map((result) => {
           console.log(result);
@@ -159,14 +165,18 @@ const txSendWaitTxEpic: Epic<TransactionActions, TransactionActions, any> = (
     })
   );
 
-const txEtherscanReqEpic: Epic<TransactionActions, TransactionActions, any> = (
-  action$,
-  state$
-) =>
+const txEtherscanReqEpic: Epic<
+  TransactionActions,
+  TransactionActions,
+  RootState
+> = (action$, state$) =>
   action$.pipe(
     filter(isActionOf(txEtherscanReq)),
     mergeMap(({ payload }) => {
-      const etherscanGetAllTx = `https://api-ropsten.etherscan.io/api?module=account&action=txlist&address=${payload.address}&apikey=${process.env.REACT_APP_ETH_API_KEY}`;
+      const network = state$.value.common.selectedNetwork;
+      const etherscanGetAllTx = `${ExplorerApiEndpoints[network]}?module=account&action=txlist&address=${payload.address}&apikey=${ExplorerApiKeys[network]}`;
+
+      console.log("explorer api endpoint", ExplorerApiEndpoints[network]);
       const axiosPromise = axios.get(etherscanGetAllTx);
       return from(axiosPromise).pipe(
         map((data: any) => {

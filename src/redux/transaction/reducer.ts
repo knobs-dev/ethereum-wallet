@@ -82,6 +82,7 @@ export function transaction(
       state.transactionHistory = action.payload.data.result;
       return state;
     case TX_ETHERSCAN_FAIL:
+      state.loading = false;
       return state;
     case CLEAR_DATA_OK:
       state = initialState;

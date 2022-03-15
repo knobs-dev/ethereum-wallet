@@ -16,6 +16,11 @@ import { rootReducer } from "./reducer.index";
 // Firebase
 import firebase from "firebase/app";
 import "firebase/firestore";
+import { CommonReducerState } from "./common/types";
+import { TransactionReducerState } from "./transaction/types";
+import { WalletReducerState } from "./wallet/types";
+import { WalletconnectReducerState } from "./walletconnect/types";
+import { AddressBookReducerState } from "./addressbook/types";
 
 // Initialize firebase
 const firebaseConfig = {
@@ -51,3 +56,11 @@ export const persistor = persistStore(store);
 
 // Start epic middleware
 epicMiddleware.run(rootEpic);
+
+export type RootState = {
+  common: CommonReducerState;
+  transaction: TransactionReducerState;
+  wallet: WalletReducerState;
+  walletconnect: WalletconnectReducerState;
+  addressbook: AddressBookReducerState;
+};

@@ -33,7 +33,7 @@ import {
   usePlatformDetector,
 } from "../../imports/utils";
 import LottieLoader from "../../components/lottieLoader/lottieLoader";
-import { AvailableNetworks } from "../../redux/common/types";
+import { AvailableNetworks } from '../../imports/config';
 import Footer from "../../components/footer/footer";
 
 import { useTranslation } from "react-i18next";
