@@ -77,7 +77,7 @@
   "transactionDetail": {
     "heading": "Transazione",
     "transaction_confirmed": "La transazione è stata inviata. A breve sarà inclusa in un blocco.",
-    "view_on_etherscan": "Vedi su Etherscan",
+    "view_on_etherscan": "Vedi sull'explorer",
     "sender": "Mittente",
     "dispatch": "Destinatario",
     "amount": "Importo",

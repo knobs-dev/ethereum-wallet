@@ -38,3 +38,10 @@ export const ExplorerApiEndpoints = {
   "polygon-mainnet": process.env.REACT_APP_POLYGON_MAINNET_API_ENDPOINT,
   "polygon-mumbai": process.env.REACT_APP_POLYGON_MUMBAI_API_ENDPOINT,
 };
+
+export const CoinSymbol = {
+  mainnet: "ETH",
+  ropsten: "ETH",
+  "polygon-mainnet": "MATIC",
+  "polygon-mumbai": "MATIC",
+};

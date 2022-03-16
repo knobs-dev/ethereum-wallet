@@ -20,7 +20,11 @@ import { guideCompleted } from "../../redux/common/actionCreators";
 import PageBody from "../../components/pageBody/pageBody";
 import LiveBalance from "../../components/liveBalance/liveBalance";
 import WalletAddress from "../../components/walletAddress/walletAddress";
-import { getProviderByNetwork, usePlatformDetector } from "../../imports/utils";
+import {
+  getProviderByNetwork,
+  getSymbolByNetwork,
+  usePlatformDetector,
+} from "../../imports/utils";
 import Footer from "../../components/footer/footer";
 import AddressList from "../../components/addressList/addressList";
 
@@ -176,7 +180,7 @@ const Wallet = (props: WalletProps) => {
                   />
                 </Heading>
                 <Heading size={size} pl={4}>
-                  ETH
+                  {getSymbolByNetwork(props.network)}
                 </Heading>
               </>
             )}

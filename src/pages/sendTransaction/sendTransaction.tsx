@@ -36,6 +36,7 @@ import {
   gweiToEth,
   getProviderByNetwork,
   usePlatformDetector,
+  getSymbolByNetwork,
 } from "../../imports/utils";
 import EtherInput, { parseEther } from "../../components/etherInput/etherInput";
 import Footer from "../../components/footer/footer";
@@ -161,7 +162,6 @@ const SendTransaction = (props: SendTransactionProps) => {
     );
   }, [props.txActions, destinationAddress, amount, gasPrice]);
 
-  console.log("loading", loading);
   if (loading) {
     return (
       <PageBody>
@@ -326,6 +326,7 @@ const SendTransaction = (props: SendTransactionProps) => {
             platform={platform}
             gasPrice={gasPrice}
             gasLimit={21000}
+            symbol={getSymbolByNetwork(props.network)}
           />
         </Flex>
         <Flex
