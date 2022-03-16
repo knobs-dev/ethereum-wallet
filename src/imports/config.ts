@@ -7,7 +7,7 @@ export const faucetURL = `${process.env["REACT_APP_FAUCET_HOST"]}:${process.env[
 export const balanceRefreshInterval = 18000;
 
 // Versioning
-export const VERSION = "0.4.3";
+export const VERSION = "0.5.0";
 
 export const AvailableProviders = {
   mainnet: process.env.REACT_APP_ETHEREUM_MAINNET_RPC_PROVIDER,
