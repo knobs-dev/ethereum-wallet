@@ -30,10 +30,10 @@ const Footer: FunctionComponent<FooterProps> = ({ children }) => {
   const BoxVersion = () => {
     return platform === "isDesktop" ? (
       <Box style={boxStyle}>
-        <Text color="brand.900" style={{ fontSize: 13, marginRight: 5 }}>
+        <Text color="brand.500" style={{ fontSize: 13, marginRight: 5 }}>
           {t("footer_version")}
         </Text>
-        <Text color="brand.900" style={{ fontSize: 16 }}>
+        <Text color="brand.500" style={{ fontSize: 16 }}>
           {VERSION}
         </Text>
       </Box>
@@ -53,12 +53,8 @@ const Footer: FunctionComponent<FooterProps> = ({ children }) => {
       <Box>
         <Link href={process.env["REACT_APP_WEB_LINK"]} target="_blank">
           <Box style={boxStyle}>
-            <Text color="brand.900">Powered by </Text>
-            <Image
-              h="40px"
-              marginLeft="10px"
-              src="/images/logo-bcode-bianco.png"
-            />
+            <Text color="brand.500">Powered by </Text>
+            <Image h="40px" marginLeft="10px" src="/images/logoBcode.png" />
           </Box>
         </Link>
       </Box>
