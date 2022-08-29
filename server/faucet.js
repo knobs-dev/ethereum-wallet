@@ -30,7 +30,6 @@ const network = process.env['REACT_APP_NETWORK'];
 //     }
 // }
 
-// const provider = getProvider(providerType, { network: 'ropsten' });
 const wallet = ethers.Wallet.fromMnemonic(mnemonic);
 // const account = wallet.connect(provider);
 

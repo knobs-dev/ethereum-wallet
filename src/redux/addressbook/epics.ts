@@ -26,18 +26,20 @@ import { addressBookAddress } from "../../imports/config";
 import { isActionOf } from "typesafe-actions";
 
 import addressBookAbi from "../../imports/abis/address_book.abi.json";
-import { infuraProviderByNetwork } from "../../imports/utils";
+import { getProviderByNetwork } from "../../imports/utils";
 import { CLEAR_DATA_OK } from "../common/actionTypes";
+import { RootState } from "../store";
 
-const addressBookFetchEpic: Epic<AddressBookAction, AddressBookAction, any> = (
-  action$,
-  state$
-) =>
+const addressBookFetchEpic: Epic<
+  AddressBookAction,
+  AddressBookAction,
+  RootState
+> = (action$, state$) =>
   action$.pipe(
     filter(isActionOf(addressBookFetch)),
     mergeMap(() => {
-      const network = state$.value.common?.selectedNetwork || "ropsten";
-      const provider = infuraProviderByNetwork(network);
+      const network = state$.value.common.selectedNetwork;
+      const provider = getProviderByNetwork(network);
 
       const addressBookContract = new ethers.Contract(
         addressBookAddress,

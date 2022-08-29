@@ -99,7 +99,7 @@
       "send": "Click here to send Ether to another Wallet",
       "twitter": "Click here to communicate to the world that you finally have a Wallet on Ethereum",
       "etherscan": "Click here to see the status of your Wallet on Etherscan, one of the leading blockchain explorers on Ethereum",
-      "menu_button_network": "Click here to choose between the test network (Ropsten) and the main network (Mainnet)"
+      "menu_button_network": "Click here to choose between the test network (Polygon Mumbai) and the main network (Mainnet)"
     },
     "send_button": "Send",
     "notarize": "Notarize",

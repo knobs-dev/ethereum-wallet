@@ -7,7 +7,6 @@ import {
     Tr,
     Skeleton,
 } from '@chakra-ui/react';
-import { AvailableNetworks } from '../../redux/common/types';
 import { EtherscanIcon } from '../icons/icons';
 import {
     viewOnEtherscan,
@@ -16,6 +15,7 @@ import {
 } from '../../imports/utils';
 
 import orderBy from 'lodash/orderBy';
+import { AvailableNetworks } from '../../imports/config';
 
 type AddressListProps = {
     addresses: Array<any>;

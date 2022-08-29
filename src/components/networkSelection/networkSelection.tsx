@@ -8,7 +8,7 @@ import {
   MenuOptionGroup,
 } from "@chakra-ui/menu";
 import { Button, useColorModeValue } from "@chakra-ui/react";
-import { AvailableNetworks } from "../../redux/common/types";
+import { AvailableNetworks } from "../../imports/config";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -65,6 +65,12 @@ const NetworkSelection: FunctionComponent<NetworkSelectionProps> = ({
               type="radio"
               onChange={handleNetworkSelect}
             >
+              <MenuItemOption value="polygon-mainnet">
+                Polygon Mainnet
+              </MenuItemOption>
+              <MenuItemOption value="polygon-mumbai">
+                Polygon Mumbai
+              </MenuItemOption>
               <MenuItemOption value="ropsten">Ropsten</MenuItemOption>
               <MenuItemOption value="mainnet">Mainnet</MenuItemOption>
             </MenuOptionGroup>

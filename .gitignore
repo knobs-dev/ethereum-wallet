@@ -29,3 +29,5 @@ public/favicon.ico
 
 .env
 src/theme/theme.ts
+
+.firebaserc
