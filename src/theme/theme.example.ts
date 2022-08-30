@@ -5,10 +5,11 @@ const fonts = {
 const colors = {
   transparent: "transparent",
   brand: {
-    900: "#57BCCC", // blue
-    800: "#1F2223", // gray
+    900: "#365088", // blue
+    800: "#211B2B", // black
     700: "#EDF5F6", // light blue
     600: "#57BCCC", // blue
+    500: "#DAEDE5", // BackgroundWhite
   },
 };
 

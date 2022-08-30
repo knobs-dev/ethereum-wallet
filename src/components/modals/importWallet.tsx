@@ -44,7 +44,7 @@ const ImportWallet: React.FunctionComponent<ImportWalletProps> = ({
 
   return (
     <>
-      <Button background="brand.900" textColor="brand.800" onClick={onOpen}>
+      <Button background="brand.900" textColor="brand.500" onClick={onOpen}>
         {children}
       </Button>
 
@@ -57,7 +57,7 @@ const ImportWallet: React.FunctionComponent<ImportWalletProps> = ({
             <Tabs
               isFitted
               align="center"
-              colorScheme="brand"
+              colorScheme="brand.900"
               onChange={(tab) => setSelectedTab(tab)}
             >
               <TabList>
@@ -103,6 +103,7 @@ const ImportWallet: React.FunctionComponent<ImportWalletProps> = ({
               <Button
                 background="brand.900"
                 ml={5}
+                textColor="brand.500"
                 onClick={() => {
                   onClose();
                   handleImport(privateKey);
