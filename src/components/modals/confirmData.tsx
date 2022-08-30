@@ -151,10 +151,10 @@ const ConfirmData: FunctionComponent<ConfirmDataProps> = ({
       <Button
         onClick={checkData}
         bgColor="brand.900"
-        textColor="brand.800"
+        textColor="white"
         width={platform === "isMobile" ? "60%" : "100%"}
         fontWeight="bold"
-        rightIcon={<PaperPlane fill="black" />}
+        rightIcon={<PaperPlane fill="white" />}
       >
         {children}
       </Button>

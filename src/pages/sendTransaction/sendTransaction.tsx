@@ -73,6 +73,7 @@ const calcMax = async (
   network: AvailableNetworks
 ) => {
   const provider = getProviderByNetwork(network);
+  console.log("PROVIDER ==>", provider);
   const balance = await provider.getBalance(address);
   const txCost = ethers.utils
     .parseUnits(gasPrice.toString(), "gwei")

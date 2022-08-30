@@ -8,6 +8,7 @@ import {
 } from "./config";
 
 export function getProviderByNetwork(network: AvailableNetworks) {
+  console.log(AvailableProviders);
   return new ethers.providers.JsonRpcProvider(AvailableProviders[network]);
 }
 

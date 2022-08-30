@@ -75,7 +75,12 @@ const BasicSlide: FunctionComponent<BasicSlideProps> = ({
       </Center>
       {buttonText && onClick && (
         <Center pt={10}>
-          <Button onClick={onClick} bg="brand.900" textColor="brand.500">
+          <Button
+            onClick={onClick}
+            bg="brand.900"
+            textColor="white"
+            _hover={{ background: "brand:500" }}
+          >
             {buttonText}
           </Button>
         </Center>

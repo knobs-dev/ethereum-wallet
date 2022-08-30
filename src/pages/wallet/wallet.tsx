@@ -191,26 +191,26 @@ const Wallet = (props: WalletProps) => {
           <Flex flex="1.4" justifyContent="center" alignItems="center">
             <Button
               bg="brand.900"
-              textColor="brand.800"
+              textColor="white"
               id="send"
               size="lg"
               fontSize="22px"
               letterSpacing="1px"
               marginRight="10px"
-              rightIcon={<PaperPlane fill="black" />}
+              rightIcon={<PaperPlane fill="white" />}
               onClick={() => history.push("/wallet/send")}
             >
               {t("wallet.send_button")}
             </Button>
             <Button
               bg="brand.900"
-              textColor="brand.800"
+              textColor="white"
               id="send"
               size="lg"
               fontSize="22px"
               letterSpacing="1px"
               marginLeft="10px"
-              rightIcon={<NotarizeIcon fill="black" />}
+              rightIcon={<NotarizeIcon fill="white" />}
               onClick={() => history.push("/wallet/notarize")}
             >
               {t("wallet.notarize")}
