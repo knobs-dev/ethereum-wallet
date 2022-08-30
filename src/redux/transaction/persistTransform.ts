@@ -8,7 +8,7 @@ const serializeTransaction = ({
   ...transaction
 }: ethers.providers.TransactionResponse) => ({
   ...transaction,
-  gasPrice: gasPrice.toString(),
+  gasPrice: gasPrice?.toString(),
   value: value.toString(),
 });
 
