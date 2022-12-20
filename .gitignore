@@ -31,3 +31,4 @@ public/favicon.ico
 src/theme/theme.ts
 
 .firebaserc
+package-lock.json
