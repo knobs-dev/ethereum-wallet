@@ -31,9 +31,10 @@ import {
   truncateStringByWidth,
   viewOnEtherscan,
   usePlatformDetector,
+  getSymbolByNetwork,
 } from "../../imports/utils";
 import LottieLoader from "../../components/lottieLoader/lottieLoader";
-import { AvailableNetworks } from '../../imports/config';
+import { AvailableNetworks, CoinSymbol } from "../../imports/config";
 import Footer from "../../components/footer/footer";
 
 import { useTranslation } from "react-i18next";
@@ -175,7 +176,9 @@ const TransactionDetail = (props: TransactionDetailProps) => {
                 {!!tx?.value && !isNotarization && (
                   <Tr>
                     <Th>{t("transactionDetail.amount")}</Th>
-                    <Td>{`${ethers.utils.formatEther(tx.value)} ETH`}</Td>
+                    <Td>{`${ethers.utils.formatEther(
+                      tx.value
+                    )} ${getSymbolByNetwork(props.network)}`}</Td>
                   </Tr>
                 )}
                 {tx && isNotarization && (
@@ -187,7 +190,7 @@ const TransactionDetail = (props: TransactionDetailProps) => {
                 {tx?.receipt && (
                   <Tr>
                     <Th>{t("transactionDetail.fees")}</Th>
-                    <Td>{`${fees} ETH`}</Td>
+                    <Td>{`${fees} ${getSymbolByNetwork(props.network)}`}</Td>
                   </Tr>
                 )}
                 {tx?.receipt && (

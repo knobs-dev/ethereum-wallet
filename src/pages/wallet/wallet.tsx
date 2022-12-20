@@ -20,7 +20,11 @@ import { guideCompleted } from "../../redux/common/actionCreators";
 import PageBody from "../../components/pageBody/pageBody";
 import LiveBalance from "../../components/liveBalance/liveBalance";
 import WalletAddress from "../../components/walletAddress/walletAddress";
-import { getProviderByNetwork, usePlatformDetector } from "../../imports/utils";
+import {
+  getProviderByNetwork,
+  getSymbolByNetwork,
+  usePlatformDetector,
+} from "../../imports/utils";
 import Footer from "../../components/footer/footer";
 import AddressList from "../../components/addressList/addressList";
 
@@ -176,7 +180,7 @@ const Wallet = (props: WalletProps) => {
                   />
                 </Heading>
                 <Heading size={size} pl={4}>
-                  ETH
+                  {getSymbolByNetwork(props.network)}
                 </Heading>
               </>
             )}
@@ -187,26 +191,26 @@ const Wallet = (props: WalletProps) => {
           <Flex flex="1.4" justifyContent="center" alignItems="center">
             <Button
               bg="brand.900"
-              textColor="brand.800"
+              textColor="white"
               id="send"
               size="lg"
               fontSize="22px"
               letterSpacing="1px"
               marginRight="10px"
-              rightIcon={<PaperPlane fill="black" />}
+              rightIcon={<PaperPlane fill="white" />}
               onClick={() => history.push("/wallet/send")}
             >
               {t("wallet.send_button")}
             </Button>
             <Button
               bg="brand.900"
-              textColor="brand.800"
+              textColor="white"
               id="send"
               size="lg"
               fontSize="22px"
               letterSpacing="1px"
               marginLeft="10px"
-              rightIcon={<NotarizeIcon fill="black" />}
+              rightIcon={<NotarizeIcon fill="white" />}
               onClick={() => history.push("/wallet/notarize")}
             >
               {t("wallet.notarize")}

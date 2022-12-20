@@ -35,6 +35,7 @@ import {
   gweiToEth,
   usePlatformDetector,
   getProviderByNetwork,
+  getSymbolByNetwork,
 } from "../../imports/utils";
 import { AvailableNetworks } from "../../imports/config";
 import Footer from "../../components/footer/footer";
@@ -269,6 +270,7 @@ const Notarize = (props: NotarizeProps) => {
             platform={platform}
             gasPrice={gasPrice}
             gasLimit={21000}
+            symbol={getSymbolByNetwork(props.network)}
           />
         </Flex>
         <Flex

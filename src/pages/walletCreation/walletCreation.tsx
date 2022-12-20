@@ -119,7 +119,7 @@ const WalletCreation: FunctionComponent<WalletCreationProps> = ({
             {creationStep === CreationSteps.INITIAL && (
               <BasicSlide
                 title={t("wallet_creation.wallet_address")}
-                imageSource="/images/wallet.svg"
+                //imageSource="/images/wallet.svg"
                 description={t("wallet_creation.description_address")}
                 buttonText={t("wallet_creation.button_address")}
                 onClick={() => {

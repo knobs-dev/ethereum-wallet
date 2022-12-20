@@ -7,7 +7,7 @@ export const faucetURL = `${process.env["REACT_APP_FAUCET_HOST"]}:${process.env[
 export const balanceRefreshInterval = 18000;
 
 // Versioning
-export const VERSION = "0.4.2";
+export const VERSION = "0.5.1";
 
 export const AvailableProviders = {
   mainnet: process.env.REACT_APP_ETHEREUM_MAINNET_RPC_PROVIDER,
@@ -37,4 +37,11 @@ export const ExplorerApiEndpoints = {
   ropsten: process.env.REACT_APP_ETHEREUM_ROPSTEN_API_ENDPOINT,
   "polygon-mainnet": process.env.REACT_APP_POLYGON_MAINNET_API_ENDPOINT,
   "polygon-mumbai": process.env.REACT_APP_POLYGON_MUMBAI_API_ENDPOINT,
+};
+
+export const CoinSymbol = {
+  mainnet: "ETH",
+  ropsten: "ETH",
+  "polygon-mainnet": "MATIC",
+  "polygon-mumbai": "MATIC",
 };
