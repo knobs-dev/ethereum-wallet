@@ -54,7 +54,11 @@ const Footer: FunctionComponent<FooterProps> = ({ children }) => {
         <Link href={process.env["REACT_APP_WEB_LINK"]} target="_blank">
           <Box style={boxStyle}>
             <Text color="brand.500">Powered by </Text>
-            <Image h="40px" marginLeft="10px" src="/images/logoBcode.png" />
+            <Image
+              h="40px"
+              marginLeft="10px"
+              src="/images/logo-knobs-bianco.png"
+            />
           </Box>
         </Link>
       </Box>

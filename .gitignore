@@ -32,3 +32,4 @@ src/theme/theme.ts
 
 .firebaserc
 package-lock.json
+*.lock

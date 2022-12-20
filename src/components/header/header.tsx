@@ -36,7 +36,11 @@ const Header = (props: HeaderProps) => {
               target="_blank"
               rel="noreferrer"
             >
-              <Image h="40px" marginLeft="10px" src="/images/logoBcode.png" />
+              <Image
+                h="40px"
+                marginLeft="10px"
+                src="/images/logo-knobs-bianco.png"
+              />
             </a>
           </Flex>
           <Spacer />

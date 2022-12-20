@@ -17,6 +17,7 @@
     "@types/node": "^12.19.12",
     "@walletconnect/client": "^1.8.0",
     "axios": "^0.21.1",
+    "buffer": "^6.0.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "ethers": "^5.0.25",
@@ -28,6 +29,7 @@
     "immer": "^8.0.0",
     "lodash": "^4.17.20",
     "react": "^17.0.2",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.8.5",
     "react-qr-svg": "^2.3.0",
@@ -55,11 +57,10 @@
     "@types/react-dom": "17.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "craco start",
     "postversion": "node versioning.js --constantPath ./src/imports/config.ts",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "craco build",
+    "test": "craco test"
   },
   "eslintConfig": {
     "extends": [
@@ -80,6 +81,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.0.0",
     "@types/react-dom": "^18.0.6",
     "@types/react-redux": "^7.1.15",
     "@types/react-router-dom": "^5.1.7",
